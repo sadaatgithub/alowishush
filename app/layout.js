@@ -1,7 +1,10 @@
+import Header from '@/components/ui/header/Header'
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { Inter,Jost } from 'next/font/google'
+import Footer from '@/components/ui/footer/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
+const jost = Jost({weight:["100","200","300","400","500","600"],subsets:['latin']})
 
 export const metadata = {
   title: 'Create Next App',
@@ -11,7 +14,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${jost.className} linear_bg`}>
+        <Header/>
+        {children}
+        <Footer/>
+        </body>
     </html>
   )
 }
